@@ -1,85 +1,148 @@
-const skillGroups = [
+import { useLanguage } from '../i18n/LangContext'
+
+const CATEGORIES = [
   {
-    category: 'Frontend',
-    icon: '🎨',
+    icon: '⚡',
+    color: { from: '#5b50f0', to: '#a78bfa', rgb: '91,80,240' },
     skills: [
-      { name: 'React.js', level: 90 },
-      { name: 'JavaScript (ES6+)', level: 88 },
-      { name: 'TypeScript', level: 75 },
-      { name: 'HTML / CSS', level: 92 },
-      { name: 'Tailwind CSS', level: 85 },
+      { name: 'React.js',      level: 95 },
+      { name: 'TypeScript',    level: 82 },
+      { name: 'Next.js',       level: 78 },
+      { name: 'Tailwind CSS',  level: 92 },
+      { name: 'Vite',          level: 88 },
+      { name: 'React Native',  level: 80 },
     ],
   },
   {
-    category: 'Backend',
-    icon: '⚙️',
+    icon: '🔧',
+    color: { from: '#0ea5e9', to: '#38bdf8', rgb: '14,165,233' },
     skills: [
-      { name: 'Node.js', level: 85 },
-      { name: 'Express.js', level: 83 },
-      { name: 'REST APIs', level: 88 },
-      { name: 'MongoDB', level: 80 },
-      { name: 'Mongoose', level: 78 },
+      { name: 'Node.js',       level: 90 },
+      { name: 'Express.js',    level: 88 },
+      { name: 'MongoDB',       level: 85 },
+      { name: 'PostgreSQL',    level: 70 },
+      { name: 'GraphQL',       level: 68 },
+      { name: 'REST APIs',     level: 95 },
     ],
   },
   {
-    category: 'Tools & DevOps',
-    icon: '🛠️',
+    icon: '🚀',
+    color: { from: '#10b981', to: '#34d399', rgb: '16,185,129' },
     skills: [
-      { name: 'Git / GitHub', level: 90 },
-      { name: 'Docker', level: 65 },
-      { name: 'Postman', level: 88 },
-      { name: 'VS Code', level: 95 },
-      { name: 'Linux / Bash', level: 70 },
+      { name: 'Git & GitHub',  level: 92 },
+      { name: 'Docker',        level: 72 },
+      { name: 'AWS (Basics)',  level: 58 },
+      { name: 'Vercel',        level: 90 },
+      { name: 'CI/CD',         level: 75 },
+      { name: 'Linux / Bash',  level: 70 },
     ],
   },
 ]
 
-function SkillBar({ name, level }) {
+const LEARNING = [
+  { name: 'AWS Certified Dev', icon: '☁️' },
+  { name: 'tRPC',              icon: '🔌' },
+  { name: 'System Design',     icon: '🏗️' },
+  { name: 'Rust (basics)',     icon: '🦀' },
+]
+
+const ALSO = [
+  'Redis', 'Firebase', 'JWT', 'OAuth 2.0', 'Nginx',
+  'Stripe', 'Socket.io', 'Axios', 'Zod', 'Prisma',
+  'Mongoose', 'Swagger', 'Postman', 'Figma', 'Jest',
+]
+
+function SkillBar({ name, level, color }) {
   return (
-    <div className="mb-4">
-      <div className="flex justify-between mb-1.5">
-        <span className="text-slate-300 text-sm font-medium">{name}</span>
-        <span className="text-primary font-mono text-sm">{level}%</span>
+    <div className="group">
+      <div className="flex justify-between items-center mb-1.5">
+        <span className="text-sm text-t2 font-medium group-hover:text-t1 transition-colors">{name}</span>
+        <span className="font-mono text-[11px] font-semibold" style={{ color: color.from }}>{level}%</span>
       </div>
-      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-        <div
-          className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-1000"
-          style={{ width: `${level}%` }}
-        />
+      <div className="h-1 rounded-full overflow-hidden" style={{ background: 'var(--surface-2)' }}>
+        <div className="h-full rounded-full transition-all duration-700"
+          style={{ width: `${level}%`, background: `linear-gradient(90deg, ${color.from}, ${color.to})` }} />
       </div>
     </div>
   )
 }
 
 export default function Skills() {
-  return (
-    <section id="skills" className="py-24 bg-card/30">
-      <div className="max-w-6xl mx-auto px-6">
-        <p className="section-sub">// 02. skills</p>
-        <h2 className="section-heading">Tech Stack</h2>
+  const { t } = useLanguage()
 
-        <div className="grid md:grid-cols-3 gap-8 mt-10">
-          {skillGroups.map(({ category, icon, skills }) => (
-            <div key={category} className="card">
-              <h3 className="text-white font-semibold text-lg mb-6 flex items-center gap-2">
-                <span>{icon}</span> {category}
-              </h3>
-              {skills.map((skill) => (
-                <SkillBar key={skill.name} {...skill} />
-              ))}
+  return (
+    <section id="skills" className="py-24 sm:py-32" style={{ background: 'var(--surface)' }}>
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+
+        <div className="sr">
+          <p className="eyebrow">02 — {t.skills.sub}</p>
+          <h2 className="h-section mb-4">
+            {t.skills.h1} <span className="grad">{t.skills.h2}</span>
+          </h2>
+        </div>
+
+        <div className="sep mt-8 mb-12" />
+
+        {/* Category cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {CATEGORIES.map((cat, i) => (
+            <div key={i} className="sr card relative overflow-hidden" style={{ transitionDelay: `${i * 0.08}s` }}>
+              {/* Colored accent strip */}
+              <div className="absolute top-0 left-0 right-0 h-[3px]"
+                style={{ background: `linear-gradient(90deg, ${cat.color.from}, ${cat.color.to})` }} />
+
+              {/* Header */}
+              <div className="flex items-center gap-3 mt-2 mb-5">
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
+                  style={{
+                    background: `rgba(${cat.color.rgb},.12)`,
+                    border: `1px solid rgba(${cat.color.rgb},.2)`,
+                  }}>
+                  {cat.icon}
+                </div>
+                <p className="font-bold text-sm text-t1">{t.skills.categories[i]}</p>
+              </div>
+
+              {/* Skill bars */}
+              <div className="space-y-3">
+                {cat.skills.map((s) => (
+                  <SkillBar key={s.name} name={s.name} level={s.level} color={cat.color} />
+                ))}
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Additional tech badges */}
-        <div className="mt-12">
-          <p className="text-slate-500 font-mono text-sm mb-4">// Also familiar with</p>
-          <div className="flex flex-wrap gap-3">
-            {['SQL', 'PostgreSQL', 'Redis', 'GraphQL', 'Firebase', 'Vercel', 'Railway', 'NGINX', 'JWT', 'OAuth2'].map((tech) => (
-              <span key={tech} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-slate-400 text-sm font-mono hover:border-primary/40 hover:text-primary transition-colors">
-                {tech}
-              </span>
-            ))}
+        {/* Currently learning + also knows */}
+        <div className="grid md:grid-cols-2 gap-5 mt-5">
+
+          {/* Currently learning */}
+          <div className="sr card">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-t3 mb-4">Currently Learning</p>
+            <div className="grid grid-cols-2 gap-3">
+              {LEARNING.map(({ name, icon }) => (
+                <div key={name} className="flex items-center gap-2.5 p-3 rounded-xl transition-all hover:-translate-y-0.5"
+                  style={{ background: 'var(--surface-2)', border: '1px solid var(--border)' }}>
+                  <span className="text-lg">{icon}</span>
+                  <span className="text-sm font-medium text-t2">{name}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-t3 font-mono mt-4">
+              Always expanding — growth never stops.
+            </p>
+          </div>
+
+          {/* Also familiar with */}
+          <div className="sr sr-d1 card">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-t3 mb-4">{t.skills.alsoTitle}</p>
+            <div className="flex flex-wrap gap-2">
+              {ALSO.map((s) => (
+                <span key={s} className="chip hover:border-[var(--a)] hover:text-a transition-colors cursor-default">
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
