@@ -231,21 +231,23 @@ function FeaturedCard({ p, col, onClick }) {
           </div>
         </div>
 
-        {/* Impact callout sidebar */}
-        <div className="flex md:flex-col items-stretch md:items-start gap-4 md:gap-3 md:w-48">
+        {/* Impact callout sidebar — vertical on mobile, horizontal on sm, vertical on md+ */}
+        <div className="flex flex-col sm:flex-row md:flex-col items-stretch gap-3 md:w-48 md:flex-shrink-0">
           {/* Impact stat */}
-          <div className="flex-1 md:flex-none rounded-xl p-4 text-left md:text-center"
+          <div className="sm:flex-1 md:flex-none rounded-xl p-4"
             style={{ background: `rgba(${col.rgb},.08)`, border: `1px solid rgba(${col.rgb},.18)` }}>
-            <svg className="w-4 h-4 mb-2 inline-block md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              style={{ color: col.from }}>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-            <p className="font-mono text-[9px] uppercase tracking-widest mb-1.5" style={{ color: col.from }}>Impact</p>
+            <div className="flex items-center gap-1.5 mb-1.5">
+              <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                style={{ color: col.from }}>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <p className="font-mono text-[9px] uppercase tracking-widest" style={{ color: col.from }}>Impact</p>
+            </div>
             <p className="text-sm font-bold text-t1 leading-snug">{p.impact}</p>
           </div>
 
           {/* Role */}
-          <div className="flex-1 md:flex-none rounded-xl p-4"
+          <div className="sm:flex-1 md:flex-none rounded-xl p-4"
             style={{ background: 'var(--surface-2)', border: '1px solid var(--border)' }}>
             <p className="font-mono text-[9px] uppercase tracking-widest text-t3 mb-1.5">Role</p>
             <p className="text-sm font-semibold text-t1 leading-snug">{p.role}</p>
