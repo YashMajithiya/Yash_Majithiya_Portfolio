@@ -23,7 +23,7 @@ const NAV_LINKS = [
 const FOOTER_LINKS = [
   { href: 'https://github.com/yashmajithiya',     label: 'GitHub' },
   { href: 'https://linkedin.com/in/yashmajithiya', label: 'LinkedIn' },
-  { href: 'mailto:yash.majithiya@example.com',     label: 'Email' },
+  { href: 'mailto:yashmajithiya40@gmail.com',     label: 'Email' },
 ]
 
 function AppInner() {
@@ -51,7 +51,7 @@ function AppInner() {
             {/* Brand */}
             <div>
               <p className="grad font-mono font-black text-xl tracking-tight leading-none mb-1.5">
-                yash<span style={{ WebkitTextFillColor: 'var(--a)' }}>.</span>
+                Full Stack Developer<span style={{ WebkitTextFillColor: 'var(--a)' }}></span>
               </p>
               <p className="text-[0.8rem] text-t3 font-mono">Full Stack Developer · India</p>
             </div>

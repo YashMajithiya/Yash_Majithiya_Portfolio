@@ -15,19 +15,19 @@ const PROJECTS = [
   {
     n: '01',
     title: 'AFX DSO Platform',
-    tagline: 'Enterprise digital service operations at scale',
-    desc: 'Enterprise-grade platform for large-scale field operations — real-time data sync, role-based access, and an offline-capable mobile experience.',
-    longDesc: 'AFX DSO is a comprehensive enterprise platform built for large-scale field operations. The system handles real-time data synchronization across hundreds of devices, with an offline-first architecture ensuring seamless operation in low-connectivity environments. A sophisticated role-based access control system with six permission levels enables granular control over data visibility and actions across departments.',
+    tagline: 'Enterprise field operations and service delivery at scale',
+    desc: 'Enterprise-grade field operations platform with real-time sync, role-based access, and an offline-capable mobile experience across teams.',
+    longDesc: 'AFX DSO is a comprehensive enterprise platform built for large-scale field operations and service delivery. The system handles real-time data synchronization across hundreds of devices, with an offline-first architecture ensuring seamless operation in low-connectivity environments. A robust role-based access model provides granular control over data visibility and actions across departments while keeping the workflow efficient for field teams and administrators.',
     features: [
-      'Real-time data sync via WebSocket with conflict resolution',
-      'Role-based access control — 6 permission levels',
-      'Offline-capable mobile app with background sync',
+      'Secure field data capture with real-time synchronization',
+      'Role-based access control with 6 permission levels',
+      'Offline-capable mobile app with background sync support',
       'Push notifications and live alerts for field agents',
       'Admin dashboard with KPI analytics and reporting',
       'Secure REST API with JWT + refresh token rotation',
     ],
     role: 'Full Stack Developer (Lead)',
-    impact: 'Deployed to 500+ field agents across 3 regions',
+    impact: 'Streamlined enterprise field operations across 500+ agents',
     tech: ['React Native', 'Node.js', 'MongoDB', 'Express', 'Redux', 'Socket.io'],
     github: 'https://github.com/yashmajithiya',
     live: null,
@@ -36,6 +36,28 @@ const PROJECTS = [
   },
   {
     n: '02',
+    title: 'AFX Digital Signature Platform',
+    tagline: 'Enterprise document signing and approval at scale',
+    desc: 'Enterprise-grade digital signature platform with secure approvals, multi-step workflows, and real-time signing status tracking across teams.',
+    longDesc: 'AFX Digital Signature is a comprehensive enterprise platform built for secure document signing and approval workflows. The system handles document uploads, signer assignment, sequential or parallel approval flows, and real-time tracking of signature status across departments. A robust audit trail and role-based access model provide full visibility into every action while keeping the workflow simple for end users and administrators.',
+    features: [
+      'Secure document upload and signature workflow management',
+      'Multi-step approval flows with sequential or parallel signers',
+      'Real-time signing status and audit trail visibility',
+      'Role-based access control for document handlers and approvers',
+      'Notifications for pending signatures and completed documents',
+      'Enterprise-ready interface for fast review and approval cycles',
+    ],
+    role: 'Full Stack Developer (Lead)',
+    impact: 'Streamlined secure document approvals across enterprise teams',
+    tech: ['React Native', 'Node.js', 'MongoDB', 'Express', 'Redux', 'REST APIs'],
+    github: 'https://github.com/yashmajithiya',
+    live: null,
+    featured: true,
+    year: '2024',
+  },
+  {
+    n: '03',
     title: 'Task Management API',
     tagline: 'Robust RESTful backend for team productivity',
     desc: 'Production-ready API with JWT auth, team workspaces, role assignments, and automated email notifications for task events.',
@@ -57,7 +79,7 @@ const PROJECTS = [
     year: '2023',
   },
   {
-    n: '03',
+    n: '04',
     title: 'Real-Time Chat App',
     tagline: 'Zero-latency messaging with presence awareness',
     desc: 'Socket.io-powered chat with rooms, online presence, typing signals, message reactions, and persistent history.',
@@ -79,7 +101,7 @@ const PROJECTS = [
     year: '2023',
   },
   {
-    n: '04',
+    n: '05',
     title: 'E-Commerce Store',
     tagline: 'Full-featured storefront with Stripe payments',
     desc: 'Product catalog, cart, Stripe payment integration, order management, and a comprehensive admin dashboard.',
@@ -101,7 +123,7 @@ const PROJECTS = [
     year: '2022',
   },
   {
-    n: '05',
+    n: '06',
     title: 'Portfolio Website',
     tagline: 'This very site — React + Vite + Tailwind',
     desc: 'Personal portfolio with dark/light mode, i18n (EN/HI/ES), scroll-reveal animations, and a Node.js contact backend.',
@@ -123,7 +145,7 @@ const PROJECTS = [
     year: '2024',
   },
   {
-    n: '06',
+    n: '07',
     title: 'Weather Dashboard',
     tagline: '7-day forecasts with Chart.js visualizations',
     desc: '7-day weather forecast with Chart.js charts, auto-detected location, and saved favourite cities.',
@@ -484,7 +506,7 @@ export default function Projects() {
   const { t } = useLanguage()
   const [selected, setSelected] = useState(null)
 
-  const [hero, ...rest] = PROJECTS
+  const [hero, signature, ...rest] = PROJECTS
 
   return (
     <section id="projects" className="py-24 sm:py-32">
@@ -499,7 +521,7 @@ export default function Projects() {
 
         <div className="sep mt-8 mb-12" />
 
-        {/* ── Featured hero project ── */}
+        {/* ── Featured hero projects ── */}
         <div className="sr mb-5">
           <FeaturedCard
             p={hero}
@@ -508,10 +530,18 @@ export default function Projects() {
           />
         </div>
 
+        <div className="sr mb-5">
+          <FeaturedCard
+            p={signature}
+            col={COLORS[1]}
+            onClick={() => setSelected({ project: signature, ci: 1 })}
+          />
+        </div>
+
         {/* ── Remaining projects ── */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {rest.map((p, i) => {
-            const ci = (i + 1) % COLORS.length
+            const ci = (i + 2) % COLORS.length
             return (
               <div key={p.n} className="sr" style={{ transitionDelay: `${i * 0.07}s` }}>
                 <ProjectCard

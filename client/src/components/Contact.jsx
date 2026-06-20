@@ -64,7 +64,7 @@ const INFO_PANELS = [
 const SOCIALS = [
   { label: 'GitHub',   href: 'https://github.com/yashmajithiya',     icon: <GHIcon /> },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/yashmajithiya', icon: <LIIcon /> },
-  { label: 'Email',    href: 'mailto:yash.majithiya@example.com',     icon: <MailIcon /> },
+  { label: 'Email',    href: 'mailto:yashmajithiya40@gmail.com',     icon: <MailIcon /> },
 ]
 
 export default function Contact() {
@@ -109,7 +109,7 @@ export default function Contact() {
           <div className="sr space-y-6">
 
             {/* Direct email CTA */}
-            <a href="mailto:yash.majithiya@example.com"
+            <a href="mailto:yashmajithiya40@gmail.com"
               className="block rounded-[var(--radius-lg)] p-5 transition-all hover:-translate-y-1"
               style={{
                 background: 'linear-gradient(135deg, rgba(var(--a-rgb),.1) 0%, rgba(var(--a-rgb),.04) 100%)',
@@ -118,7 +118,7 @@ export default function Contact() {
               <p className="font-mono text-[10px] uppercase tracking-widest mb-2" style={{ color: 'var(--a)' }}>
                 Direct email
               </p>
-              <p className="font-bold text-t1 text-[0.9rem] break-all">yash.majithiya@example.com</p>
+              <p className="font-bold text-t1 text-[0.9rem] break-all">yashmajithiya40@gmail.com</p>
               <p className="text-xs text-t3 font-mono mt-1">Click to open in mail client →</p>
             </a>
 

@@ -61,7 +61,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <span className="grad font-mono font-black text-base tracking-tight select-none cursor-pointer">
-          yash<span style={{ WebkitTextFillColor: 'var(--a)' }}>.</span>
+          Full Stack Developer<span style={{ WebkitTextFillColor: 'var(--a)' }}></span>
         </span>
 
         {/* Desktop nav */}

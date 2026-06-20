@@ -7,12 +7,12 @@ const CATEGORIES = [
     label: 'Frontend',
     color: { from: '#5b50f0', to: '#a78bfa', rgb: '91,80,240' },
     skills: [
+      { name: 'React Native',  level: 100 },
       { name: 'React.js',      level: 95 },
       { name: 'TypeScript',    level: 82 },
       { name: 'Next.js',       level: 78 },
       { name: 'Tailwind CSS',  level: 92 },
       { name: 'Vite',          level: 88 },
-      { name: 'React Native',  level: 80 },
     ],
   },
   {
@@ -23,8 +23,6 @@ const CATEGORIES = [
       { name: 'Node.js',       level: 90 },
       { name: 'Express.js',    level: 88 },
       { name: 'MongoDB',       level: 85 },
-      { name: 'PostgreSQL',    level: 70 },
-      { name: 'GraphQL',       level: 68 },
       { name: 'REST APIs',     level: 95 },
     ],
   },
@@ -33,27 +31,23 @@ const CATEGORIES = [
     label: 'DevOps',
     color: { from: '#10b981', to: '#34d399', rgb: '16,185,129' },
     skills: [
+      { name: 'Azure',  level: 92 },
       { name: 'Git & GitHub',  level: 92 },
-      { name: 'Docker',        level: 72 },
-      { name: 'AWS (Basics)',  level: 58 },
+      { name: 'JavaScript',        level: 72 },
       { name: 'Vercel',        level: 90 },
-      { name: 'CI/CD',         level: 75 },
-      { name: 'Linux / Bash',  level: 70 },
     ],
   },
 ]
 
 const LEARNING = [
-  { name: 'AWS Certified Dev', icon: '☁️' },
   { name: 'tRPC',              icon: '🔌' },
   { name: 'System Design',     icon: '🏗️' },
   { name: 'Rust (basics)',     icon: '🦀' },
 ]
 
 const ALSO = [
-  'Redis', 'Firebase', 'JWT', 'OAuth 2.0', 'Nginx',
-  'Stripe', 'Socket.io', 'Axios', 'Zod', 'Prisma',
-  'Mongoose', 'Swagger', 'Postman', 'Figma', 'Jest',
+  'Redis', 'Firebase', 'JWT', 'OAuth 2.0','Stripe', 'Socket.io',
+  'Mongoose', 'Swagger', 'Postman', 'Figma', 'Jest', 'Axios'
 ]
 
 function SkillBar({ name, level, color }) {

@@ -2,18 +2,20 @@ import { useLanguage } from '../i18n/LangContext'
 
 const STATS = [
   { val: '3+',  label: 'Years Exp.',  col: 'var(--a)'  },
-  { val: '20+', label: 'Projects',    col: '#10b981'   },
+  { val: '40+', label: 'Projects',    col: '#10b981'   },
   { val: '10+', label: 'Clients',     col: '#f59e0b'   },
   { val: '5+',  label: 'Open Source', col: '#ec4899'   },
 ]
 
-const STACK = ['React', 'Node.js', 'TypeScript', 'MongoDB', 'Next.js', 'Docker']
+const STACK = ['Mobile App Developer', 'React -Native','React', 'Node.js', 'TypeScript', 'MongoDB', 'JavaScript', 'Tailwind CSS']
 
 const VALUES = [
   { icon: '✦', text: 'Clean code over clever code' },
   { icon: '✦', text: 'User experience is everyone\'s job' },
   { icon: '✦', text: 'Ship fast, iterate often' },
   { icon: '✦', text: 'Transparent, async-first communication' },
+  { icon: '✦', text: 'Large Scalable Architectures' },
+  { icon: '✦', text: 'Stable performance applications' },
 ]
 
 const OPEN_TO = [
@@ -64,7 +66,11 @@ export default function About() {
                     background: 'linear-gradient(135deg, rgba(var(--a-rgb),.18), rgba(var(--a-rgb),.06))',
                     border: '1px solid rgba(var(--a-rgb),.22)',
                   }}>
-                  👨‍💻
+                  <img
+                    src="/profile.jpg"
+                    alt="Yash Majithiya"
+                    className="w-full h-full rounded-2xl object-cover"
+                  />
                 </div>
                 <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-green-400"
                   style={{ border: '2.5px solid var(--bg)' }} />
@@ -132,8 +138,9 @@ export default function About() {
             <p className="font-mono text-[10px] uppercase tracking-widest text-t3 mb-4">Currently</p>
             <div className="space-y-4">
               {[
-                { icon: '🏢', bg: 'rgba(var(--a-rgb),.1)',    border: 'rgba(var(--a-rgb),.2)',    title: 'The Gateway Corp', sub: 'Full Stack Developer',  subCol: 'var(--a)' },
+                { icon: '🏢', bg: 'rgba(var(--a-rgb),.1)',    border: 'rgba(var(--a-rgb),.2)',    title: 'The Gateway Corp', sub: 'Senior Software Developer',  subCol: 'var(--a)' },
                 { icon: '📱', bg: 'rgba(16,185,129,.1)',       border: 'rgba(16,185,129,.2)',       title: 'AFX DSO Platform', sub: 'Enterprise mobile app',  subCol: '#10b981'  },
+                { icon: '📱', bg: 'rgba(16,185,129,.1)',       border: 'rgba(16,185,129,.2)',       title: 'AFX Digi-Sign Platform', sub: 'Enterprise mobile app',  subCol: '#10b981'  },
                 { icon: '📚', bg: 'rgba(245,158,11,.1)',       border: 'rgba(245,158,11,.2)',       title: 'Studying',         sub: 'AWS, System Design, tRPC' },
               ].map(({ icon, bg, border, title, sub, subCol }) => (
                 <div key={title} className="flex items-start gap-3">

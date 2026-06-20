@@ -21,26 +21,26 @@ const Mail = () => (
 const SOCIALS = [
   { label: 'GitHub',   href: 'https://github.com/yashmajithiya',     icon: <GH /> },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/yashmajithiya', icon: <LI /> },
-  { label: 'Email',    href: 'mailto:yash.majithiya@example.com',     icon: <Mail /> },
+  { label: 'Email',    href: 'mailto:yashmajithiya40@gmail.com',     icon: <Mail /> },
 ]
 
 const STATS = [
   { val: '3+',   label: 'Years' },
-  { val: '20+',  label: 'Projects' },
+  { val: '40+',  label: 'Projects' },
   { val: '10+',  label: 'Clients' },
   { val: '500+', label: 'Users' },
 ]
 
 const TECH_MARQUEE = [
   'React', 'Node.js', 'TypeScript', 'MongoDB', 'Express',
-  'Next.js', 'Tailwind CSS', 'Docker', 'PostgreSQL', 'GraphQL',
+  'Next.js', 'Tailwind CSS', 'JavaScript',
   'React Native', 'Redux', 'REST APIs', 'Git', 'Vercel',
   'React', 'Node.js', 'TypeScript', 'MongoDB', 'Express',
-  'Next.js', 'Tailwind CSS', 'Docker', 'PostgreSQL', 'GraphQL',
+  'Next.js', 'Tailwind CSS', 'JavaScript',
   'React Native', 'Redux', 'REST APIs', 'Git', 'Vercel',
 ]
 
-const MINI_TECH = ['React', 'Node.js', 'TypeScript', 'MongoDB', 'Tailwind', 'Docker']
+const MINI_TECH = ['React', 'Node.js', 'TypeScript', 'MongoDB', 'Tailwind', 'JavaScript']
 
 export default function Hero() {
   const { t } = useLanguage()
@@ -173,8 +173,15 @@ export default function Hero() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-mono text-t3 uppercase tracking-wider mb-0.5">Currently at</p>
-                  <p className="font-black text-sm text-t1 leading-tight">The Gateway Corp</p>
-                  <p className="text-xs mt-0.5" style={{ color: 'var(--a)' }}>Full Stack Developer</p>
+                  <a
+                    href="https://thegatewaycorp.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-black text-sm text-t1 leading-tight hover:text-a transition-colors"
+                  >
+                    The Gateway Corp
+                  </a>
+                  <p className="text-xs mt-0.5" style={{ color: 'var(--a)' }}>Senior Software Developer</p>
                 </div>
                 <span className="relative flex h-2 w-2 flex-shrink-0">
                   <span className="animate-ping absolute h-full w-full rounded-full bg-green-400 opacity-60" />
@@ -183,7 +190,7 @@ export default function Hero() {
               </div>
               <div className="mt-4 pt-3.5" style={{ borderTop: '1px solid var(--border)' }}>
                 <p className="text-[11px] text-t3 font-mono leading-relaxed">
-                  Building AFX DSO — enterprise field-ops for 500+ agents
+                  Building AFX DSO and Digi-Sign — enterprise field-ops for 500+ agents
                 </p>
               </div>
             </div>
@@ -194,7 +201,7 @@ export default function Hero() {
               <div className="grid grid-cols-2 gap-2.5">
                 {[
                   { val: '3+', label: 'Years coding', col: 'var(--a)' },
-                  { val: '20+', label: 'Projects shipped', col: '#10b981' },
+                  { val: '40+', label: 'Projects shipped', col: '#10b981' },
                   { val: '10+', label: 'Happy clients', col: '#f59e0b' },
                   { val: '500+', label: 'Users served', col: '#ec4899' },
                 ].map(({ val, label, col }) => (
