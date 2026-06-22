@@ -14,154 +14,238 @@ const COLORS = [
 const PROJECTS = [
   {
     n: '01',
-    title: 'AFX DSO Platform',
-    tagline: 'Enterprise field operations and service delivery at scale',
-    desc: 'Enterprise-grade field operations platform with real-time sync, role-based access, and an offline-capable mobile experience across teams.',
-    longDesc: 'AFX DSO is a comprehensive enterprise platform built for large-scale field operations and service delivery. The system handles real-time data synchronization across hundreds of devices, with an offline-first architecture ensuring seamless operation in low-connectivity environments. A robust role-based access model provides granular control over data visibility and actions across departments while keeping the workflow efficient for field teams and administrators.',
-    features: [
-      'Secure field data capture with real-time synchronization',
-      'Role-based access control with 6 permission levels',
-      'Offline-capable mobile app with background sync support',
-      'Push notifications and live alerts for field agents',
-      'Admin dashboard with KPI analytics and reporting',
-      'Secure REST API with JWT + refresh token rotation',
+    title: 'AFX DSO',
+    tagline: 'Automotive dealer service operations — React Native mobile platform',
+    desc: 'React Native 0.85.3 mobile app for automotive dealer service operations across multiple Autofacets brands.',
+    bullets: [
+      'Azure AD / MSAL Single Sign-On with multi-tenant OAuth2 across dealer networks',
+      'Work order management with tabbed view (checklist, jobs, parts, media, invoice, communication)',
+      'Dynamic checklists, SST diagnostic workflows, car 2D dent marking & media capture',
+      'Mechanic stamp-in/out, digital signatures, QR scanning, and audio recording for comments',
+      'Firebase, Azure Blob Storage, CryptoJS AES-256-CBC encryption & Redux (~20 reducers)',
     ],
-    role: 'Full Stack Developer (Lead)',
-    impact: 'Streamlined enterprise field operations across 500+ agents',
-    tech: ['React Native', 'Node.js', 'MongoDB', 'Express', 'Redux', 'Socket.io'],
-    github: 'https://github.com/yashmajithiya',
+    longDesc: 'AFX DSO (Dealer Service Operations) is a React Native 0.85.3 mobile application built for automotive dealer service operations, supporting multiple brands under the Autofacets (A Gateway Group) umbrella. The app covers the full dealer service lifecycle — from appointment booking through work order management, parts handling, and invoice generation. A robust encryption layer (AES-256-CBC via CryptoJS) secures all API payloads, while Redux with ~20 reducers manages complex state across dealer-specific workflows. The app ships with multi-language support across six locales and deep integrations with Azure AD, Firebase, and Azure Blob Storage.',
+    features: [
+      'Azure AD / MSAL Single Sign-On',
+      'Work order management with tabbed detail view (checklist, jobs, parts, media, invoice, communication)',
+      'Dynamic checklists & SST (Super Service Triage) diagnostic workflows',
+      'Car 2D dent marking & image annotation',
+      'Photo/video capture with watermarking',
+      'Audio recording for comments',
+      'Mechanic stamp-in/out & digital signature capture',
+      'QR code scanning to open work orders',
+      'Parts, services, packages & labor management',
+      'Appointment calendar & new booking creation',
+      'Key pickup kiosk (dealer-gated)',
+      'Dealer special tools search',
+      'In-app PDF viewer & technical manuals',
+      'Multi-language support (EN, DE, FR, DA, NO, NL)',
+    ],
+    integrations: [
+      'Firebase — Analytics, Crashlytics, FCM push notifications, Firestore telemetry',
+      'Azure AD / MSAL — Multi-tenant OAuth2 SSO',
+      'Azure Blob Storage — Video delivery',
+      'CryptoJS — AES-256-CBC API payload encryption',
+      'Axios — HTTP client with JWT auto-refresh',
+      'Redux + Thunk — State management (~20 reducers)',
+      'react-native-vision-camera, image-crop-picker, image-marker, blob-util, pdf, video, signature-capture, nitro-sound',
+    ],
+    role: 'React Native Developer',
+    impact: 'Deployed across automotive dealer networks in 6 languages for multiple Autofacets brands',
+    tech: ['React Native 0.85.3', 'React 19', 'Redux + Thunk', 'Axios', 'Firebase', 'Azure AD / MSAL', 'Azure Blob', 'CryptoJS'],
+    github: null,
     live: null,
     featured: true,
     year: '2024',
   },
   {
     n: '02',
-    title: 'AFX Digital Signature Platform',
-    tagline: 'Enterprise document signing and approval at scale',
-    desc: 'Enterprise-grade digital signature platform with secure approvals, multi-step workflows, and real-time signing status tracking across teams.',
-    longDesc: 'AFX Digital Signature is a comprehensive enterprise platform built for secure document signing and approval workflows. The system handles document uploads, signer assignment, sequential or parallel approval flows, and real-time tracking of signature status across departments. A robust audit trail and role-based access model provide full visibility into every action while keeping the workflow simple for end users and administrators.',
-    features: [
-      'Secure document upload and signature workflow management',
-      'Multi-step approval flows with sequential or parallel signers',
-      'Real-time signing status and audit trail visibility',
-      'Role-based access control for document handlers and approvers',
-      'Notifications for pending signatures and completed documents',
-      'Enterprise-ready interface for fast review and approval cycles',
+    title: 'AFX DigiSign',
+    tagline: 'Multi-tenant digital signature platform for automotive dealerships',
+    desc: 'React Native mobile app that digitizes field service paperwork and captures legally binding customer signatures on-site.',
+    bullets: [
+      'Real-time work order delivery to service advisors via Microsoft SignalR',
+      'Customers review and sign digitally on a tablet — legally binding on-site signatures',
+      'Signed documents instantly uploaded to the server upon completion',
+      'Multi-tenant architecture — multiple dealership groups from a single codebase',
     ],
-    role: 'Full Stack Developer (Lead)',
-    impact: 'Streamlined secure document approvals across enterprise teams',
-    tech: ['React Native', 'Node.js', 'MongoDB', 'Express', 'Redux', 'REST APIs'],
-    github: 'https://github.com/yashmajithiya',
+    longDesc: 'AFX DigiSign is a multi-tenant React Native mobile app for automotive dealerships that digitizes field service paperwork and captures legally binding customer signatures on-site. Work orders are delivered to service advisors in real time via Microsoft SignalR, customers review and sign on a tablet, and signed documents are instantly uploaded to the server. The multi-tenant architecture supports multiple dealership groups from a single codebase, making it ideal for scalable enterprise deployments.',
+    features: [
+      'Delivers work orders to service advisors in real time',
+      'Customers review and sign digitally on a tablet',
+      'Signed documents are instantly uploaded to the server',
+      'Supports multiple dealership groups (tenants) from a single codebase',
+    ],
+    integrations: [
+      'React Native 0.85 + React 19 — cross-platform mobile',
+      'Redux + Thunk — centralized state management',
+      'Microsoft SignalR — real-time work order push notifications',
+      'Axios — REST API communication',
+      'AES (CryptoJS) — end-to-end encrypted API payloads',
+      'Firebase — Crashlytics (error tracking), Analytics, FCM (push notifications)',
+      'React Navigation 7 — stack + drawer navigation',
+      'i18n-js — multi-language support (English, Norwegian, Dutch)',
+      'AsyncStorage + SecureStorage — local session persistence',
+      'react-native-signature-canvas — digital signature capture',
+    ],
+    role: 'React Native Developer',
+    impact: 'Digitized field signature workflows across multiple automotive dealership groups from a single codebase',
+    tech: ['React Native 0.85', 'React 19', 'Redux + Thunk', 'SignalR', 'Firebase', 'CryptoJS', 'Axios', 'i18n-js'],
+    github: null,
     live: null,
     featured: true,
     year: '2024',
   },
   {
     n: '03',
-    title: 'Task Management API',
-    tagline: 'Robust RESTful backend for team productivity',
-    desc: 'Production-ready API with JWT auth, team workspaces, role assignments, and automated email notifications for task events.',
-    longDesc: 'A production-ready task management API built with Node.js and Express, designed for team collaboration at scale. Features comprehensive CRUD operations, workspace isolation per team, JWT-based authentication with secure refresh token rotation, and Nodemailer-powered email notifications for task assignments and deadline reminders. Full API documentation generated with Swagger.',
+    title: 'Gateway Prayas',
+    tagline: 'Internal workforce welfare and assistance platform — AF-X',
+    desc: 'Internal AF-X project built during the training phase, exploring the full MERN stack with a focus on clean architecture and reusable components.',
+    longDesc: 'Gateway Prayas is an internal enterprise project developed at Autofacets (A Gateway Group company) during the 6-month training phase. The app was built to explore full-stack development with React, Node.js, Express.js, and MongoDB, with a focus on scalable architecture, reusable component libraries, and clean code practices. It served as the first end-to-end enterprise-grade application delivered at Gateway Group.',
     features: [
-      'Full CRUD for tasks, projects, and workspaces',
-      'JWT authentication with refresh token rotation',
-      'Team workspaces with member roles (admin, member, viewer)',
-      'Email notifications via Nodemailer for task lifecycle events',
-      'API rate limiting and request validation with Joi',
-      'Interactive API docs with Swagger / OpenAPI 3.0',
+      'Full-stack development with React + Node.js + MongoDB',
+      'Modular architecture with reusable component library',
+      'REST API design and integration with Express.js',
+      'User authentication and role-based access control',
+      'Responsive UI with a clean, consistent design system',
     ],
-    role: 'Backend Developer',
-    impact: 'Supports 1,000+ concurrent API requests',
-    tech: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Nodemailer', 'Swagger'],
-    github: 'https://github.com/yashmajithiya',
-    live: null,
-    featured: true,
-    year: '2023',
-  },
-  {
-    n: '04',
-    title: 'Real-Time Chat App',
-    tagline: 'Zero-latency messaging with presence awareness',
-    desc: 'Socket.io-powered chat with rooms, online presence, typing signals, message reactions, and persistent history.',
-    longDesc: 'A fully-featured real-time chat application built with Socket.io and React. Supports multiple chat rooms, private direct messages, and group conversations. Implements presence detection (online/offline/away), typing indicators, message read receipts, emoji reactions, and file sharing. Persistent message history stored in MongoDB with efficient cursor-based pagination.',
-    features: [
-      'Real-time messaging with Socket.io (< 50 ms latency)',
-      'Multiple chat rooms and private direct messages',
-      'Online/offline/away presence indicators',
-      'Typing indicators and message read receipts',
-      'Emoji reactions and file/image sharing',
-      'Persistent message history with cursor pagination',
-    ],
-    role: 'Full Stack Developer',
-    impact: 'Handles 200+ concurrent socket connections per server',
-    tech: ['React', 'Socket.io', 'Node.js', 'Express', 'MongoDB'],
-    github: 'https://github.com/yashmajithiya',
-    live: null,
-    featured: true,
-    year: '2023',
-  },
-  {
-    n: '05',
-    title: 'E-Commerce Store',
-    tagline: 'Full-featured storefront with Stripe payments',
-    desc: 'Product catalog, cart, Stripe payment integration, order management, and a comprehensive admin dashboard.',
-    longDesc: 'A complete e-commerce solution with a React storefront, Node.js backend, and MongoDB database. Features a fully-functional product catalog with search and filtering, a persistent cart, user authentication, Stripe payment processing with webhook support, order management, and an admin dashboard for inventory and order tracking.',
-    features: [
-      'Product catalog with search, filter, and sort',
-      'Persistent shopping cart and saved wishlist',
-      'Stripe payment integration with webhook support',
-      'User authentication with order history',
-      'Admin dashboard for inventory and order management',
-      'Mobile-first responsive design',
-    ],
-    role: 'Full Stack Developer',
-    impact: 'Processed 1,200+ test transactions in staging',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind', 'Redux'],
-    github: 'https://github.com/yashmajithiya',
+    role: 'Trainee Developer',
+    impact: 'First enterprise-grade application built end-to-end at Gateway Group',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JavaScript'],
+    github: null,
     live: null,
     featured: false,
     year: '2022',
   },
   {
-    n: '06',
-    title: 'Portfolio Website',
-    tagline: 'This very site — React + Vite + Tailwind',
-    desc: 'Personal portfolio with dark/light mode, i18n (EN/HI/ES), scroll-reveal animations, and a Node.js contact backend.',
-    longDesc: 'The site you are currently viewing. Built with React 18 and Vite for a blazing-fast experience, styled with Tailwind CSS and a custom CSS variable theming system. Features dark/light mode with OS preference detection, three-language internationalization (English, Hindi, Spanish), scroll-reveal animations via IntersectionObserver, fluid clamp-based typography, and a Node.js + MongoDB backend for the contact form.',
+    n: '04',
+    title: 'Expense Manager',
+    tagline: 'Internal expense tracking and reporting for AF-X teams',
+    desc: 'Internal AF-X project for tracking expenses, generating reports, and managing budgets — built during the 6-month training phase.',
+    longDesc: 'Expense Manager is an internal application developed at Autofacets during the training period. The project covers expense submission, category-based tracking, reporting dashboards with charts, and budget management for internal teams. It was a hands-on exercise in building data-driven React applications backed by a Node.js REST API and MongoDB database, with SQL explored alongside.',
     features: [
-      'Dark/light mode with OS preference detection',
-      'Multi-language support: English, Hindi, Spanish',
-      'Scroll-reveal animations via IntersectionObserver',
-      'Fluid responsive typography with CSS clamp()',
-      'Typing animation for hero role cycle',
-      'Contact form with Node.js + MongoDB backend',
+      'Expense submission with category-based tracking',
+      'Monthly and yearly reporting dashboard with charts',
+      'Budget allocation and over-limit alerts',
+      'User authentication with role-based views (employee / admin)',
+      'Export reports to PDF and CSV',
     ],
-    role: 'Designer & Developer',
-    impact: 'Built end-to-end in under 2 weeks',
-    tech: ['React 18', 'Vite', 'Tailwind CSS', 'Node.js', 'MongoDB'],
-    github: 'https://github.com/yashmajithiya/personal-website',
+    role: 'Trainee Developer',
+    impact: 'Internalized full MERN stack patterns applied in production applications',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'SQL', 'JavaScript'],
+    github: null,
     live: null,
     featured: false,
-    year: '2024',
+    year: '2023',
+  },
+  {
+    n: '05',
+    title: 'Craft Beverages',
+    tagline: 'US-based loyalty and rewards app for craft beverage brands',
+    desc: 'React Native loyalty app for US craft beverage brands with stamps, rewards, photo/video, and payment integrations — serving 1,000+ users across the United States.',
+    bullets: [
+      'Stamps and rewards system driving repeat customer engagement',
+      'Photo and video integration for product showcases and user-generated content',
+      'Payment integration enabling in-app purchases and transactions',
+      'Multi-tenant: 20 brand-specific apps from a single codebase serving 1,000+ US users',
+    ],
+    longDesc: 'Craft Beverages is a US-based React Native mobile loyalty and rewards application serving craft beverage brands. The project involved 20 applications sharing a single codebase, each customized with major UI changes and minor functionality differences per brand identity. Features include a stamps-based loyalty system, photo/video capture for product content, payment integrations, and an admin panel for campaign management. Over 1,000 customers use the applications daily across the United States.',
+    features: [
+      'Stamps-based loyalty and rewards system',
+      'Photo and video integration for product content and UGC',
+      'Payment processing integration',
+      'Per-brand major UI customization with shared core functionality',
+      'Push notifications for rewards and promotions',
+      'Admin panel for campaign and rewards management',
+    ],
+    role: 'Software Developer (Internship)',
+    impact: '1,000+ active users across the US — 20 brand apps from a single codebase',
+    tech: ['React Native', 'Redux', 'REST APIs', 'Firebase', 'Stripe', 'JavaScript'],
+    github: null,
+    live: null,
+    featured: true,
+    year: '2023',
+  },
+  {
+    n: '06',
+    title: 'Hospital Management System',
+    tagline: 'Full-featured hospital operations with ASP.NET',
+    desc: 'Comprehensive hospital management system covering patient records, appointments, billing, and staff management — built with ASP.NET.',
+    longDesc: 'A comprehensive hospital management system built during the training phase. The application manages patient records, doctor appointments, billing and invoicing, staff schedules, and medical inventory. Built with ASP.NET and JavaScript, it provided hands-on experience with multi-module enterprise system design and relational database management.',
+    features: [
+      'Patient registration and medical record management',
+      'Doctor appointment scheduling system',
+      'Billing and invoice generation',
+      'Staff management and scheduling',
+      'Medical inventory tracking',
+    ],
+    role: 'Trainee Developer',
+    impact: 'Demonstrated enterprise-level system design during training',
+    tech: ['ASP.NET', 'JavaScript', 'SQL Server', 'HTML/CSS'],
+    github: 'https://github.com/YashMajithiya/Hospital_Management_System_With_ASP.NET',
+    live: null,
+    featured: false,
+    year: '2022',
   },
   {
     n: '07',
-    title: 'Weather Dashboard',
-    tagline: '7-day forecasts with Chart.js visualizations',
-    desc: '7-day weather forecast with Chart.js charts, auto-detected location, and saved favourite cities.',
-    longDesc: 'A beautiful weather dashboard that fetches real-time and forecast data from the OpenWeatherMap API. Includes interactive Chart.js graphs for temperature trends, precipitation probability, and wind speed over the week. Users can save favourite cities to localStorage, toggle between Celsius and Fahrenheit, and get auto-detected location-based weather via the browser Geolocation API.',
+    title: 'Smart Attendance System',
+    tagline: 'Dual-mode attendance via QR code and facial recognition',
+    desc: 'Python attendance system combining QR code scanning and facial recognition for automated, accurate attendance tracking.',
+    longDesc: 'A smart attendance system that combines two verification modes: QR code scanning for quick check-ins and facial recognition using OpenCV for identity verification. Built with Python during the training phase, this project explored computer vision, image processing, and biometric authentication fundamentals.',
     features: [
-      'Real-time weather from OpenWeatherMap API',
-      '7-day forecast with hourly breakdown',
-      'Chart.js visualizations for temperature, rain, wind',
-      'Auto-detect location via Geolocation API',
-      'Save and manage favourite cities',
-      'Celsius / Fahrenheit toggle',
+      'Dual-mode: QR code scan + facial recognition',
+      'Real-time face detection with OpenCV',
+      'Automated attendance logging with timestamps',
+      'Admin dashboard for attendance reports',
+      'Export to CSV / Excel',
     ],
-    role: 'Frontend Developer',
-    impact: 'Supports 200+ cities worldwide',
-    tech: ['React', 'OpenWeather API', 'Chart.js', 'Vite', 'CSS Modules'],
-    github: 'https://github.com/yashmajithiya',
+    role: 'Trainee Developer',
+    impact: 'Explored computer vision and biometric authentication techniques',
+    tech: ['Python', 'OpenCV', 'QR Code', 'SQLite', 'HTML/CSS'],
+    github: 'https://github.com/YashMajithiya/Attendance_system_with_qrcode_and_Face_Attendance',
+    live: null,
+    featured: false,
+    year: '2022',
+  },
+  {
+    n: '08',
+    title: 'E-Commerce (Laravel 8)',
+    tagline: 'Full-featured storefront built with PHP / Laravel',
+    desc: 'Complete e-commerce application with product management, cart, checkout, and admin panel — built with Laravel 8 and PHP.',
+    longDesc: 'A full-featured e-commerce web application built with Laravel 8 during the training phase. The project covers product catalog management, shopping cart, checkout, order management, and a comprehensive admin dashboard for inventory and order tracking. This project was an exploration of PHP/Laravel alongside SQL database design.',
+    features: [
+      'Product catalog with categories and search',
+      'Shopping cart and checkout flow',
+      'Order management and tracking',
+      'Admin dashboard for inventory management',
+      'User authentication with order history',
+    ],
+    role: 'Trainee Developer',
+    impact: 'Built end-to-end e-commerce system during tech exploration phase',
+    tech: ['PHP', 'Laravel 8', 'MySQL', 'HTML/CSS', 'JavaScript'],
+    github: 'https://github.com/YashMajithiya/ecommerce_website_in_laravel8',
+    live: null,
+    featured: false,
+    year: '2022',
+  },
+  {
+    n: '09',
+    title: 'Django Attendance System',
+    tagline: 'Web-based attendance management with Python / Django',
+    desc: 'Django-powered attendance management system with student and faculty tracking, reports, and a clean admin interface.',
+    longDesc: 'A web-based attendance management system built with Python and Django. Faculty can mark attendance, students view their records, and administrators generate reports. This project explored Django ORM, class-based views, and web-based admin interfaces during the Python and SQL exploration phase of training.',
+    features: [
+      'Student and faculty attendance tracking',
+      'Role-based dashboards (student / faculty / admin)',
+      'Attendance reports with date range filtering',
+      'Django admin interface for configuration',
+      'Import and export attendance data',
+    ],
+    role: 'Trainee Developer',
+    impact: 'Explored Python/Django web framework alongside SQL databases',
+    tech: ['Python', 'Django', 'SQLite', 'HTML/CSS', 'Bootstrap'],
+    github: 'https://github.com/YashMajithiya/Django_Attendance_System',
     live: null,
     featured: false,
     year: '2022',
@@ -186,6 +270,7 @@ const CloseIcon = () => (
 
 /* ── Featured Hero Card ──────────────────────────────────────── */
 function FeaturedCard({ p, col, onClick }) {
+  const { t } = useLanguage()
   return (
     <article
       className="card relative overflow-hidden group cursor-pointer"
@@ -240,7 +325,18 @@ function FeaturedCard({ p, col, onClick }) {
             <span className="group-hover:[color:var(--ac)] transition-colors duration-200">{p.title}</span>
           </h3>
           <p className="text-sm text-t3 font-mono mb-4">{p.tagline}</p>
-          <p className="text-[0.9rem] leading-[1.75] text-t2 mb-6">{p.desc}</p>
+          {p.bullets ? (
+            <ul className="mb-6 space-y-2">
+              {p.bullets.map((b, i) => (
+                <li key={i} className="flex gap-2.5 text-[0.875rem] leading-relaxed text-t2">
+                  <span className="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: col.from }} />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-[0.9rem] leading-[1.75] text-t2 mb-6">{p.desc}</p>
+          )}
 
           {/* Tech chips */}
           <div className="flex flex-wrap gap-1.5">
@@ -263,7 +359,7 @@ function FeaturedCard({ p, col, onClick }) {
                 style={{ color: col.from }}>
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
-              <p className="font-mono text-[9px] uppercase tracking-widest" style={{ color: col.from }}>Impact</p>
+              <p className="font-mono text-[9px] uppercase tracking-widest" style={{ color: col.from }}>{t.projects.impact}</p>
             </div>
             <p className="text-sm font-bold text-t1 leading-snug">{p.impact}</p>
           </div>
@@ -271,7 +367,7 @@ function FeaturedCard({ p, col, onClick }) {
           {/* Role */}
           <div className="sm:flex-1 md:flex-none rounded-xl p-4"
             style={{ background: 'var(--surface-2)', border: '1px solid var(--border)' }}>
-            <p className="font-mono text-[9px] uppercase tracking-widest text-t3 mb-1.5">Role</p>
+            <p className="font-mono text-[9px] uppercase tracking-widest text-t3 mb-1.5">{t.projects.role}</p>
             <p className="text-sm font-semibold text-t1 leading-snug">{p.role}</p>
           </div>
         </div>
@@ -281,7 +377,7 @@ function FeaturedCard({ p, col, onClick }) {
       <div className="mt-6 pt-5 flex items-center justify-end gap-2" style={{ borderTop: '1px solid var(--border)' }}>
         <span className="text-[11px] font-mono font-semibold group-hover:translate-x-0.5 transition-transform"
           style={{ color: col.from }}>
-          View Full Details
+          {t.projects.viewFullDetails}
         </span>
         <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"
           style={{ color: col.from }}>
@@ -294,6 +390,7 @@ function FeaturedCard({ p, col, onClick }) {
 
 /* ── Standard Project Card ───────────────────────────────────── */
 function ProjectCard({ p, col, onClick, featuredLabel }) {
+  const { t } = useLanguage()
   return (
     <article
       className="card flex flex-col h-full group cursor-pointer relative overflow-hidden"
@@ -361,7 +458,7 @@ function ProjectCard({ p, col, onClick, featuredLabel }) {
         </div>
         <div className="flex items-center justify-end gap-1 text-[11px] font-mono group-hover:translate-x-0.5 transition-transform"
           style={{ color: col.from }}>
-          View Details
+          {t.projects.viewDetails}
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
           </svg>
@@ -374,6 +471,7 @@ function ProjectCard({ p, col, onClick, featuredLabel }) {
 /* ── Project Modal ───────────────────────────────────────────── */
 function ProjectModal({ project, ci, onClose }) {
   const col = COLORS[ci]
+  const { t } = useLanguage()
 
   useEffect(() => {
     const onKey = (e) => { if (e.key === 'Escape') onClose() }
@@ -440,15 +538,29 @@ function ProjectModal({ project, ci, onClose }) {
           <div style={{ height: 1, background: 'var(--border)' }} />
 
           <div>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-t3 mb-3">Overview</p>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-t3 mb-3">{t.projects.overview}</p>
             <p className="text-[0.875rem] leading-[1.75] text-t2">{project.longDesc}</p>
           </div>
 
           {project.features?.length > 0 && (
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-t3 mb-3">Key Features</p>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-t3 mb-3">{t.projects.keyFeatures}</p>
               <ul className="space-y-2.5">
                 {project.features.map((f, i) => (
+                  <li key={i} className="flex gap-3 text-[0.875rem] leading-relaxed text-t2">
+                    <span className="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: col.from }} />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {project.integrations?.length > 0 && (
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-widest text-t3 mb-3">{t.projects.integrations}</p>
+              <ul className="space-y-2.5">
+                {project.integrations.map((f, i) => (
                   <li key={i} className="flex gap-3 text-[0.875rem] leading-relaxed text-t2">
                     <span className="mt-[7px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: col.from }} />
                     {f}
@@ -467,7 +579,7 @@ function ProjectModal({ project, ci, onClose }) {
               </svg>
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-widest mb-0.5" style={{ color: col.from }}>
-                  Impact
+                  {t.projects.impact}
                 </p>
                 <p className="text-sm font-semibold text-t1">{project.impact}</p>
               </div>
@@ -479,18 +591,18 @@ function ProjectModal({ project, ci, onClose }) {
               <a href={project.github} target="_blank" rel="noopener noreferrer"
                 className="btn flex-1 justify-center"
                 style={{ background: `rgba(${col.rgb},.09)`, border: `1px solid rgba(${col.rgb},.22)`, color: col.from }}>
-                <GHIcon /> View on GitHub
+                <GHIcon /> {t.projects.viewOnGH}
               </a>
             )}
             {project.live && (
               <a href={project.live} target="_blank" rel="noopener noreferrer"
                 className="btn-primary flex-1 justify-center">
-                Live Demo <ExtIcon />
+                {t.projects.liveDemo} <ExtIcon />
               </a>
             )}
             {!project.github && !project.live && (
               <p className="text-xs font-mono text-t3 text-center pt-2">
-                Source code is private (enterprise project)
+                {t.projects.privateSource}
               </p>
             )}
           </div>
@@ -506,7 +618,8 @@ export default function Projects() {
   const { t } = useLanguage()
   const [selected, setSelected] = useState(null)
 
-  const [hero, signature, ...rest] = PROJECTS
+  const projects = PROJECTS.map((p, i) => ({ ...p, ...(t.projectsData?.[i] || {}) }))
+  const [hero, signature, ...rest] = projects
 
   return (
     <section id="projects" className="py-24 sm:py-32">
