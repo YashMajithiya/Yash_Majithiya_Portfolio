@@ -7,6 +7,7 @@ import Services from './components/Services'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Experience from './components/Experience'
+import Achievements from './components/Achievements'
 import Contact from './components/Contact'
 import { useScrollReveal } from './hooks/useScrollReveal'
 import { useLanguage } from './i18n/LangContext'
@@ -16,8 +17,9 @@ const NAV_LINKS = [
   { to: 'services',   label: 'Services' },
   { to: 'skills',     label: 'Skills'   },
   { to: 'projects',   label: 'Projects' },
-  { to: 'experience', label: 'Exp.'     },
-  { to: 'contact',    label: 'Contact'  },
+  { to: 'experience',   label: 'Exp.'        },
+  { to: 'achievements', label: 'Awards'      },
+  { to: 'contact',      label: 'Contact'     },
 ]
 
 const FOOTER_LINKS = [
@@ -40,6 +42,7 @@ function AppInner() {
         <Skills />
         <Projects />
         <Experience />
+        <Achievements />
         <Contact />
       </main>
 

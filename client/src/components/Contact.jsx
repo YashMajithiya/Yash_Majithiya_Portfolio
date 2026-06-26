@@ -92,7 +92,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
 
         <div className="sr">
-          <p className="eyebrow">05 — {t.contact.sub}</p>
+          <p className="eyebrow">06 — {t.contact.sub}</p>
           <h2 className="h-section mb-4">
             {t.contact.h1} <span className="grad">{t.contact.h2}</span>
           </h2>
